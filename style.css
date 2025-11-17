@@ -1,0 +1,274 @@
+/******** GENERAL ********/
+
+html {
+    overflow: hidden;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#glContainer {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.3);  
+    border-radius: 8px;
+}
+/******** LINKS ********/
+
+p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: antiquewhite;
+}
+
+a:visited {
+    color: antiquewhite;
+}
+
+.borderDiv {
+    border-top: dashed 1px white;
+    width: 50px;
+    margin: auto;
+    height: 15px;
+}
+
+/******** HEADINGS ********/
+
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 13px;
+
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 8px;
+    color: antiquewhite;
+
+}
+
+h3{
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    color: antiquewhite;
+    font-weight: 100;
+    margin-top: 40px;
+}
+/******** MAIN TITLE ********/
+
+#title {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-color: rgba(0, 15, 30, 0.9);
+    z-index: 5;
+    position: fixed;
+    left: 50%;
+    margin-left: -50%;
+    width: 100%;
+    height: 220px;
+    text-align: center;   
+}
+
+.descriptHidden {
+    height: 0%;
+    transition: 1s all;
+}
+
+.descriptShown {
+    height: calc(100% - 220px);
+    transition: 1s all;
+}
+/******** ABOUT SECTION ********/
+#dropdown{
+    z-index: 4;
+    position: fixed;
+    top: 220px;
+    width: 100%;
+    overflow-y:scroll;
+    color: white;
+    background-color: rgba(0, 15, 30, 0.96);
+    text-align: center;   
+}
+
+#description {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+    font-size: 15px;
+    z-index: 10;
+}
+
+#description p {
+    text-indent: 30px;
+}
+
+#description img {
+    margin-top: 20px;
+    position: relative;
+    left: 145px;
+}
+
+.topShown {
+    top: 0%;
+    transition: 1s all;
+}
+
+.topHidden {
+    top: -400px;
+    transition: 1s all;
+}
+
+#currentNode {
+    text-transform: capitalize;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 30px;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -50%;
+    color: antiquewhite;
+    width: 100%;
+    z-index: 6;
+    text-align: center;
+}
+/******** WIKIPEDIA ********/
+
+#article {
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+}
+
+.hidden {
+    right: -410px;
+    transition: .5s all ease-out;
+}
+
+.visible {
+    right: 20px;
+    transition: .5s all ease-out;
+}
+
+#article iframe {
+    height: 100%;
+    width: 400px;
+}
+/********* UI ********/
+/**** Wiki Button ****/
+
+.arrow {
+    /* Draws an arrow with CSS */
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: -50px;
+    width: 0px;
+    height: 0px;
+    border-top: solid 45px transparent;
+    border-bottom: solid 45px transparent;
+    border-right: solid 45px white;
+    border-left: solid 0px transparent;
+    transition: .2s all;
+}
+
+.arrow:hover {
+    border-right: solid 45px #cc5511;
+    transition: .2s all;
+}
+
+#logoBox {
+    /* Just a box in the same position as the arrow. Allows us to position Wiki logo. */
+    
+    position: absolute;
+    top: 40%;
+    left: -50px;
+    width: 90px;
+    height: 90px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#wikiLogo {
+    position: absolute;
+    top: 27%;
+    left: 12%;
+    width: 35%;
+    height: 50%;
+    pointer-events: none;
+    object-fit: contain; /* Need to preserve aspect ratio in FireFox */
+}
+/**** Buttons ****/
+
+.button {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    display: inline;
+    z-index: 6;
+    cursor: pointer;
+    border: solid 2px white;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 30px 10px 30px;
+    transition: .2s all;
+}
+
+.button:hover {
+    left: -5px;
+    top: -5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .2s all;
+    box-shadow: 5px 5px 0px #cc5511;
+}
+
+#about {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+#about:hover {
+    top: 15px;
+    left: 15px;
+}
+
+/**** Audio Button ****/
+
+#audioToggle {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background-image: url(images/audioicon.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    height: 20px;
+}
+
+#audioToggle:hover {
+    top: 75px;
+    left: 15px;
+}
+
+.audioOn {
+    background-color: #cc5511;
+}
+
+.audioOff {}
